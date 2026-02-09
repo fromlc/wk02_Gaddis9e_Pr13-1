@@ -14,10 +14,7 @@
 //----------------------------------------------------------------------
 // using symbols
 //----------------------------------------------------------------------
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
+//using std::cin, std::cout, std::endl, std::string;
 
 //----------------------------------------------------------------------
 // globals
@@ -29,7 +26,7 @@ Rectangle g_box;
 //----------------------------------------------------------------------
 bool doAnotherRect(double&, double&);
 void displayRect();
-double validateDouble(string&);
+double validateDouble(std::string&);
 
 //----------------------------------------------------------------------
 // entry point
@@ -40,11 +37,11 @@ int main() {
 	double length;
 
 	// app banner
-	cout << "\nThis program calculates the area of a rectangle.\n\n";
+	std::cout << "\nThis program calculates the area of a rectangle.\n\n";
 
 	// run until user quits
-	while (doAnotherRect(width, length)) {
-
+	while (doAnotherRect(width, length))
+	{
 		// store user's rectangle data
 		g_box.setWidth(width);
 		g_box.setLength(length);
@@ -52,7 +49,7 @@ int main() {
 		displayRect();
 	}
 
-	cout << "\nGoodbye!\n\n";
+	std::cout << "\nGoodbye!\n\n";
 
 	return 0;
 }
@@ -61,20 +58,22 @@ int main() {
 // - store user's Rectangle dimensions in reference parameters
 // - return false when user enters 0 for width, true otherwise
 //----------------------------------------------------------------------
-bool doAnotherRect(double& rectWidth, double& rectLength) {
-	string input;
+bool doAnotherRect(double& rectWidth, double& rectLength) 
+{
+	std::string input;
 
-	cout << "Enter the width (0 quits): ";
-	cin >> input;
+	std::cout << "Enter the width (0 quits): ";
+	std::cin >> input;
 	rectWidth = validateDouble(input);
 
 	// 0 width means user wants to quit
-	if (!rectWidth) {
+	if (!rectWidth)
+	{
 		return false;
 	}
 
-	cout << "Enter the length: ";
-	cin >> input;
+	std::cout << "Enter the length: ";
+	std::cin >> input;
 	rectLength = validateDouble(input);
 
 	return true;
@@ -83,12 +82,12 @@ bool doAnotherRect(double& rectWidth, double& rectLength) {
 //----------------------------------------------------------------------
 // display Rectangle data in global g_box
 //----------------------------------------------------------------------
-void displayRect() {
-
-	cout << "Your rectangle's data:\n";
-	cout << "Width: " << g_box.getWidth() << '\n';
-	cout << "Length: " << g_box.getLength() << '\n';
-	cout << "Area: " << g_box.getArea() << "\n\n";
+void displayRect() 
+{
+	std::cout << "Your rectangle's data:\n";
+	std::cout << "Width: " << g_box.getWidth() << '\n';
+	std::cout << "Length: " << g_box.getLength() << '\n';
+	std::cout << "Area: " << g_box.getArea() << "\n\n";
 }
 
 //----------------------------------------------------------------------
@@ -96,7 +95,8 @@ void displayRect() {
 // if passed string can be converted to a double value then
 // return the absolute value, otherwise return 0
 //----------------------------------------------------------------------
-double validateDouble(string& input) {
+double validateDouble(std::string& input)
+{
 	double d = strtod(input.c_str(), nullptr);
 
 	return d >= 0 ? d : -d;
