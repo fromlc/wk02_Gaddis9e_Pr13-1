@@ -97,7 +97,13 @@ void displayRect()
 //----------------------------------------------------------------------
 double validateDouble(std::string& input)
 {
+	// - strtod() is a C++ library function,
+	//		it converts a C string to a double value.
+	// - c_str() is a std::string method,
+	//		it converts std::string to a C array of char.
+
 	double d = strtod(input.c_str(), nullptr);
 
+	// return the absolute value of d
 	return d >= 0 ? d : -d;
 }
