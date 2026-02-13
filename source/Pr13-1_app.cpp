@@ -109,7 +109,10 @@ double validateDouble(std::string& input)
 	// - strtod() is a C++ library function
 	//		that converts a C string to a double value.
 	// - c_str() is a std::string method
-	//		that converts std::string to a C array of char.
+	//		that converts std::string to a zero-terminated 
+	//		C array of char.
+	// - c_str() is useful for calling many C library functions
+	//		that are available to call from C++ code.
 
 	// strtod() reference page:
 	// https://en.cppreference.com/w/c/string/byte/strtof
