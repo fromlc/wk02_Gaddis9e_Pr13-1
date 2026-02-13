@@ -106,7 +106,7 @@ void displayRect()
 //----------------------------------------------------------------------
 double validateDouble(std::string& input)
 {
-	// - strtod() is a C++ library function
+	// - strtod() is a C++ (actually an old C) library function
 	//		that converts a C string to a double value.
 	// - c_str() is a std::string method
 	//		that converts std::string to a zero-terminated 
