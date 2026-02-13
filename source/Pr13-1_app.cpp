@@ -36,6 +36,11 @@ int main() {
 	double width;
 	double length;
 
+	Rectangle r1;
+	r1.setWidth(5);
+
+	Rectangle r2(6, 9);
+
 	// app banner
 	std::cout << "\nThis program calculates the area of a rectangle.\n\n";
 
