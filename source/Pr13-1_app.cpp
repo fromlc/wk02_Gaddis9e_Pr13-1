@@ -36,9 +36,13 @@ int main() {
 	double width;
 	double length;
 
+	// example of declaring a local variable of type Rectangle
+	//		r1 is an instance of class Rectangle.
 	Rectangle r1;
 	r1.setWidth(5);
 
+	// example of invoking a constructor with initial values
+	//		for Rectangle member variables width and length.
 	Rectangle r2(6, 9);
 
 	// app banner
@@ -111,6 +115,11 @@ double validateDouble(std::string& input)
 	// https://en.cppreference.com/w/c/string/byte/strtof
 
 	double d = strtod(input.c_str(), nullptr);
+
+	// Note this validation function will interpret
+	//		input that cannot be resolved to a double value
+	//		as 0.
+	// #TODO Can you write a better validation function?
 
 	// return the absolute value of d
 	return d >= 0 ? d : -d;
