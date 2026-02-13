@@ -107,6 +107,9 @@ double validateDouble(std::string& input)
 	// - c_str() is a std::string method,
 	//		it converts std::string to a C array of char.
 
+	// strtod() reference page:
+	// https://en.cppreference.com/w/c/string/byte/strtof
+
 	double d = strtod(input.c_str(), nullptr);
 
 	// return the absolute value of d
